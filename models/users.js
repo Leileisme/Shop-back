@@ -6,6 +6,7 @@ import UserRole from '../enums/UserRole.js'
 const cartSchema = new Schema({
   product: {
     // _id mongoose裡面的
+    // 這裡取的是products裡面的_id?
     type: ObjectId,
     ref: 'products',
     required: [true, '缺少商品欄位']

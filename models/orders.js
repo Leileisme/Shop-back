@@ -2,6 +2,7 @@ import { Schema, model, ObjectId } from 'mongoose'
 
 const cartSchema = new Schema({
   product: {
+    // 這裡取的是products裡面的_id?
     type: ObjectId,
     ref: 'products',
     required: [true, '缺少商品欄位']
