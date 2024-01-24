@@ -200,3 +200,16 @@ export const getCart = async (req, res) => {
     })
   }
 }
+
+// 購票之後要存兩個地方，範例如下
+// export const addCart = async () => {
+//   try {
+//     const event = await events.findById(req.body.event).orFail()
+//     event.tickets.push({ user: req.user._id, used: false })
+//     await event.save()
+
+//     req.user.tickets.push(event.tickets[]._id)
+//     await req.user.save()
+//   } catch (error) {
+//   }
+// }

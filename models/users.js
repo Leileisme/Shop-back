@@ -39,6 +39,9 @@ const schema = new Schema(
       unique: true,
       validator: {
         validator (value) {
+          if (this.role === 1) {
+            return validator.isEmail(value) && value.includes('edu')
+          }
           return validator.isEmail(value)
         },
         message: '使用者信箱格式錯誤'

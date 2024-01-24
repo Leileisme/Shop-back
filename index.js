@@ -25,6 +25,7 @@ app.use(
   })
 )
 
+// 四個參數處理上一層的錯誤
 app.use((_, req, res, next) => {
   res.status(403).json({
     success: false,

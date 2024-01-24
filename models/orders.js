@@ -16,7 +16,6 @@ const cartSchema = new Schema({
 const schema = new Schema({
   user: {
     type: ObjectId,
-    // ref: 'users',其他地方有???不然怎麼判定
     ref: 'users',
     required: [true, '缺少使用者']
   },

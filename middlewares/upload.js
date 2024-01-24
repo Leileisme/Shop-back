@@ -10,6 +10,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET
 })
 
+// 存文字
+// cloudinary.upload('aaa')
+// https://github.com/cloudinary/cloudinary_npm/issues/177
+
 const upload = multer({
   // 使用 multer-storage-cloudinary 來設定Multer的檔案儲存方式
   // 將檔案直接上傳到雲端
