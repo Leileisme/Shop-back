@@ -36,6 +36,7 @@ export const create = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
+    // jwt.sign 創造一個新的JWT，並接受三個參數 ( 物件、密鑰、選項 )
     const token = jwt.sign({ _id: req.user._id }, process.env.JWT_SECRET, { expiresIn: '7 days' })
     req.user.tokens.push(token)
     await req.user.save()
@@ -99,6 +100,8 @@ export const extend = async (req, res) => {
   }
 }
 
+// 登入後用JWT存 pinai
+// 取得個人資料 放在本地 pinai不會保存
 export const getProfile = (req, res) => {
   try {
     res.status(StatusCodes.OK).json({

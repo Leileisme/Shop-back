@@ -4,6 +4,7 @@ import jsonwebtoken from 'jsonwebtoken'
 
 // auth 授權
 export const login = (req, res, next) => {
+  // { session: false } 不要 cookie
   passport.authenticate('login', { session: false }, (error, user, info) => {
     if (!user || error) {
       if (info.message === 'Missing credentials') {
